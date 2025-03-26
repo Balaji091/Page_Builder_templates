@@ -9,712 +9,730 @@
     <!-- Google Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #F3FAFF;
+            overflow-x: hidden; /* Prevent horizontal overflow */
         }
         #mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
         }
         #menu-toggle:checked ~ #mobile-menu {
             transform: translateX(0);
         }
+        .swiper {
+            width: 100%;
+            padding-bottom: 40px;
+        }
+        .swiper-slide {
+            width: 300px !important;
+            height: 300px !important;
+        }
+        @media (max-width: 640px) {
+            .swiper-slide {
+                width: 280px !important;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
-<body>
-      <!-- Top Contact Bar -->
-     
-      <div class="w-full border-b-2 border-gray-200 py-3">
+<body class="overflow-x-hidden">
+    <!-- Top Contact Bar -->
+    <div class="w-full border-b-2 border-gray-200 py-3 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between items-center">
             <!-- Phone Info -->
-            <div class="flex items-center text-black font-dm text-base md:text-lg leading-6 md:leading-7">
-                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4094_header-phone-call.svg" class="w-5 h-5 md:w-6 md:h-6" />
-                <span class="pl-2 md:pl-4">Call Us - (+22) 123 456 7890</span>
+            <div class="flex items-center text-black font-dm text-sm md:text-base leading-6">
+                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4094_header-phone-call.svg" class="w-4 h-4 md:w-5 md:h-5" />
+                <span class="pl-2 md:pl-3">Call Us - (+22) 123 456 7890</span>
             </div>
     
             <!-- Social Icons -->
-            <div class="flex space-x-3 md:space-x-4 mt-3 md:mt-0">
+            <div class="flex space-x-2 md:space-x-4 mt-2 md:mt-0">
                 <a href="#" class="hover:opacity-75 transition">
-                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4096_header-facebook.svg" alt="Facebook" class="w-5 h-5 md:w-6 md:h-6">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4096_header-facebook.svg" alt="Facebook" class="w-4 h-4 md:w-5 md:h-5">
                 </a>
                 <a href="#" class="hover:opacity-75 transition">
-                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/6666b6620c95bb52a44435e3_twitter-icon.svg" alt="Twitter" class="w-5 h-5 md:w-6 md:h-6">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/6666b6620c95bb52a44435e3_twitter-icon.svg" alt="Twitter" class="w-4 h-4 md:w-5 md:h-5">
                 </a>
                 <a href="#" class="hover:opacity-75 transition">
-                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4097_header-instagram.svg" alt="Instagram" class="w-5 h-5 md:w-6 md:h-6">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4097_header-instagram.svg" alt="Instagram" class="w-4 h-4 md:w-5 md:h-5">
                 </a>
                 <a href="#" class="hover:opacity-75 transition">
-                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4095_header-linkedin.svg" alt="LinkedIn" class="w-5 h-5 md:w-6 md:h-6">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4095_header-linkedin.svg" alt="LinkedIn" class="w-4 h-4 md:w-5 md:h-5">
                 </a>
             </div>
         </div>
     </div>
+
+    <!-- Navigation Bar -->
+    <nav class="py-4 px-4 md:px-6 font-[400] text-[19px] leading-[28.5px] text-[#555555] font-[DM Sans, sans-serif]">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-blue-800">
+                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40c0_doctorate.png" 
+                    class="w-32 md:w-48 h-auto">
+            </div>
     
-
-      <!-- Navigation Bar -->
-
-        <nav class="py-4 px-6 font-[400] text-[19px] leading-[28.5px] text-[#555555] font-[DM Sans, sans-serif]">
-                <div class="max-w-6xl mx-auto flex justify-between items-center">
-                    <!-- Logo -->
-                    <div class="text-2xl font-bold text-blue-800">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40c0_doctorate.png" 
-                            class="w-40 md:w-60 h-auto">
-                    </div>
+            <!-- Hidden checkbox for mobile menu toggle -->
+            <input type="checkbox" id="menu-toggle" class="hidden">
             
-                    <!-- Hidden checkbox for mobile menu toggle -->
-                    <input type="checkbox" id="menu-toggle" class="hidden">
-                    
-                    <!-- Desktop Menu -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="#" class="hover:text-blue-600">Home</a>
-                        <a href="#" class="hover:text-blue-600">About</a>
-                        <a href="#" class="hover:text-blue-600">Services</a>
-                        <a href="#" class="hover:text-blue-600">Pages</a>
-                        <a href="#" class="hover:text-blue-600">Contact</a>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center space-x-2">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Appointment</span>
-                        </button>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <label for="menu-toggle" class="md:hidden cursor-pointer">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </label>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="hover:text-blue-600 text-sm lg:text-base">Home</a>
+                <a href="#" class="hover:text-blue-600 text-sm lg:text-base">About</a>
+                <a href="#" class="hover:text-blue-600 text-sm lg:text-base">Services</a>
+                <a href="#" class="hover:text-blue-600 text-sm lg:text-base">Pages</a>
+                <a href="#" class="hover:text-blue-600 text-sm lg:text-base">Contact</a>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 md:px-4 md:py-2 rounded-md flex items-center space-x-2 text-sm">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Appointment</span>
+                </button>
+            </div>
             
-                    <!-- Mobile Menu -->
-                    <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ease-in-out">
-                        <!-- Close Button -->
-                        <label for="menu-toggle" class="absolute top-4 right-4 cursor-pointer">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </label>
-                        
-                        <!-- Mobile Menu Items -->
-                        <a href="#" class="text-xl hover:text-blue-600">Home</a>
-                        <a href="#" class="text-xl hover:text-blue-600">About</a>
-                        <a href="#" class="text-xl hover:text-blue-600">Services</a>
-                        <a href="#" class="text-xl hover:text-blue-600">Pages</a>
-                        <a href="#" class="text-xl hover:text-blue-600">Contact</a>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md flex items-center space-x-2 mt-4">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Appointment</span>
-                        </button>
-                    </div>
-                </div>
-        </nav>
+            <!-- Mobile Menu Button -->
+            <label for="menu-toggle" class="md:hidden cursor-pointer">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </label>
+    
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ease-in-out">
+                <!-- Close Button -->
+                <label for="menu-toggle" class="absolute top-4 right-4 cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </label>
+                
+                <!-- Mobile Menu Items -->
+                <a href="#" class="text-xl hover:text-blue-600">Home</a>
+                <a href="#" class="text-xl hover:text-blue-600">About</a>
+                <a href="#" class="text-xl hover:text-blue-600">Services</a>
+                <a href="#" class="text-xl hover:text-blue-600">Pages</a>
+                <a href="#" class="text-xl hover:text-blue-600">Contact</a>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md flex items-center space-x-2 mt-4">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Appointment</span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-      <!-- hero section-->
-
-        <div class="relative w-full h-screen bg-cover bg-center flex items-center px-6 lg:px-12"
-            style="background-image: url('https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40e7_hero-area-banner.jpg');">
-        
+    <!-- Hero Section -->
+    <div class="relative w-full h-auto md:h-screen bg-cover bg-center flex items-center px-4 py-16 md:px-12 md:py-0"
+        style="background-image: url('https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40e7_hero-area-banner.jpg');">
+    
         <!-- Overlay for better readability -->
-        <div class="absolute inset-0 bg-opacity-90"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
 
         <!-- Content -->
-        <div class="relative z-10 max-w-2xl text-white">
-          <div class="flex items-center space-x-2 text-blue-300 text-sm font-semibold uppercase">
-            <span><img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f409e_banner-bubble.svg"/></span>
-            <span class="text-black">Serving to the People Since 2000</span>
-          </div>
-          <h1 class="text-4xl text-black lg:text-5xl font-bold leading-tight mt-2">
-            On a Pursuit of <br> Better Medicine
-          </h1>
-          <p class="text-lg mt-4 text-black">
-            This is open to everyone every day and provides primary health care and cutting-edge medicine in a central location.
-          </p>
-          <button class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-            Book an Appointment
-          </button>
+        <div class="relative z-10 max-w-2xl text-white py-8 md:py-0">
+            <div class="flex items-center space-x-2 text-blue-300 text-sm font-semibold uppercase">
+                <span><img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f409e_banner-bubble.svg"/></span>
+                <span class="text-black">Serving to the People Since 2000</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mt-2 text-black">
+                On a Pursuit of <br> Better Medicine
+            </h1>
+            <p class="text-base md:text-lg mt-4 text-black">
+                This is open to everyone every day and provides primary health care and cutting-edge medicine in a central location.
+            </p>
+            <button class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Book an Appointment
+            </button>
         </div>
-      </div>
+    </div>
 
-    <!-- Features section-->
-                
-            <div class="relative w-11/12 max-w-6xl mx-auto -mt-20 bg-white shadow-lg rounded-2xl p-6 md:p-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Feature Card 1 -->
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold">Our Doctors</h3>
-                            <p class="text-gray-600">Once the family has reached a decision, the team informs the relevant parties.</p>
-                            <a href="#" class="text-blue-600 font-semibold mt-2 inline-block">+ FIND A DOCTOR</a>
-                        </div>
+    <!-- Features Section -->
+    <div class="relative w-full px-4 -mt-10 md:-mt-20">
+        <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-2xl p-6 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Feature Card 1 -->
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-
-                    <!-- Feature Card 2 -->
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold">Health Foundation</h3>
-                            <p class="text-gray-600">Medical professionals team is trained to provide you with the care and support.</p>
-                            <a href="#" class="text-blue-600 font-semibold mt-2 inline-block">+ VIEW ALL DEPARTMENTS</a>
-                        </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold">Our Doctors</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Once the family has reached a decision, the team informs the relevant parties.</p>
+                        <a href="#" class="text-blue-600 font-semibold mt-2 inline-block text-sm md:text-base">+ FIND A DOCTOR</a>
                     </div>
+                </div>
 
-                    <!-- Feature Card 3 -->
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <svg class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold">24/7 Services</h3>
-                            <p class="text-gray-600">Emergency staff who are available 24 hours a day, seven days a week.</p>
-                            <a href="#" class="text-blue-600 font-semibold mt-2 inline-block">+ CONTACT US</a>
-                        </div>
+                <!-- Feature Card 2 -->
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold">Health Foundation</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Medical professionals team is trained to provide you with the care and support.</p>
+                        <a href="#" class="text-blue-600 font-semibold mt-2 inline-block text-sm md:text-base">+ VIEW ALL DEPARTMENTS</a>
+                    </div>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="flex items-start space-x-4">
+                    <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                        <svg class="w-6 h-6 md:w-8 md:h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5-6l3 3-3 3m-5 4h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-semibold">24/7 Services</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Emergency staff who are available 24 hours a day, seven days a week.</p>
+                        <a href="#" class="text-blue-600 font-semibold mt-2 inline-block text-sm md:text-base">+ CONTACT US</a>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-    <!-- about us-->
-
-        <section class="bg-[#f8fbff] px-6 md:px-12 py-12">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+    <!-- About Us Section -->
+    <section class="bg-[#f8fbff] px-4 md:px-8 py-12">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
             <!-- Text Content -->
-            <div class="md:w-1/2 text-center md:text-left">
-                <div class="flex items-center space-x-2">
-                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-5">
-                    <p class="text-blue-500 font-semibold uppercase tracking-wide">About Us</p>
+            <div class="md:w-1/2 text-center md:text-left px-4">
+                <div class="flex items-center justify-center md:justify-start space-x-2">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-4 md:h-5">
+                    <p class="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">About Us</p>
                 </div>
                 
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-                Welcome To Doctorate Central Hospital
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mt-2">
+                    Welcome To Doctorate Central Hospital
                 </h2>
-                <p class="text-gray-600 mt-4">
-                Our team of highly trained professionals uses the latest healing technologies to restore you to pain-free health quickly and easily.
+                <p class="text-gray-600 mt-4 text-sm md:text-base">
+                    Our team of highly trained professionals uses the latest healing technologies to restore you to pain-free health quickly and easily.
                 </p>
-                <div class="bg-blue-900 text-white p-6 rounded-lg mt-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <p class="flex items-center">
-                    ✔️ 20+ years of excellence
-                    </p>
-                    <p class="flex items-center">
-                    ✔️ Multi Speciality Hospital
-                    </p>
-                    <p class="flex items-center">
-                    ✔️ 24 Hours Medical Service
-                    </p>
-                    <p class="flex items-center">
-                    ✔️ Professional Experts
-                    </p>
-                </div>
-                <button class="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md w-full md:w-auto">
-                    BOOK AN APPOINTMENT
-                </button>
+                <div class="bg-blue-900 text-white p-4 md:p-6 rounded-lg mt-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+                        <p class="flex items-center text-sm md:text-base">
+                            ✔️ 20+ years of excellence
+                        </p>
+                        <p class="flex items-center text-sm md:text-base">
+                            ✔️ Multi Speciality Hospital
+                        </p>
+                        <p class="flex items-center text-sm md:text-base">
+                            ✔️ 24 Hours Medical Service
+                        </p>
+                        <p class="flex items-center text-sm md:text-base">
+                            ✔️ Professional Experts
+                        </p>
+                    </div>
+                    <button class="mt-4 md:mt-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md w-full md:w-auto text-sm md:text-base">
+                        BOOK AN APPOINTMENT
+                    </button>
                 </div>
             </div>
         
             <!-- Image -->
-            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center px-4">
                 <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40e6_doctor-with-record.png" 
                     alt="Doctor" 
                     class="w-full max-w-md">
             </div>
-            </div>
-        </section>
-    
-  
-    <!-- Departments-->>
+        </div>
+    </section>
 
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4 max-w-6xl"> <!-- Centered with max-width -->
-                <!-- Heading and Button Row -->
-                <div class="flex flex-col md:flex-row md:justify-between items-center mb-8 text-center md:text-left">
-                    <div>
-                        <div class="flex items-center space-x-2">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
-                                alt="Separator" class="h-5">
-                            <p class="text-blue-500 font-semibold uppercase tracking-wide">Departments</p>
-                        </div>
-                        <h2 class="text-3xl font-bold mt-2">Explore Our Services</h2>
-                    </div>
-                    <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition mt-4 md:mt-0">
-                        View All Services
-                    </button>
-                </div>
-        
-                <!-- Cards Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Card 1 -->
-                    <div class="p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
-                        <div class="flex justify-center">
-                            <div class="bg-blue-500 p-4 rounded-full shadow-md">
-                                <img src="https://img.icons8.com/ios-filled/50/ffffff/heart-with-pulse.png" alt="Cardiologist" class="w-12 h-12">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold mt-4">Cardiologist</h3>
-                        <p class="text-gray-600 mt-2">Objectively integrate enterprise-wide strategic theme areas with functionalized infrastructures.</p>
-                        <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">+ Read More</a>
-                    </div>
-        
-                    <!-- Card 2 -->
-                    <div class="p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
-                        <div class="flex justify-center">
-                            <div class="bg-blue-500 p-4 rounded-full shadow-md">
-                                <img src="https://img.icons8.com/ios-filled/50/ffffff/lungs.png" alt="Pulmonary" class="w-12 h-12">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold mt-4">Pulmonary</h3>
-                        <p class="text-gray-600 mt-2">Interactively productize premium technologies where interdependent quality vectors are available.</p>
-                        <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">+ Read More</a>
-                    </div>
-        
-                    <!-- Card 3 -->
-                    <div class="p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
-                        <div class="flex justify-center">
-                            <div class="bg-blue-500 p-4 rounded-full shadow-md">
-                                <img src="https://img.icons8.com/ios-filled/50/ffffff/lungs.png" alt="Radiology" class="w-12 h-12">
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold mt-4">Radiology</h3>
-                        <p class="text-gray-600 mt-2">The point of using Lorem Ipsum is that it has a more-or-less distribution of look like readable English.</p>
-                        <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">+ Read More</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    <!--Appointment-->
-
-        <section class="bg-blue-900 text-white px-6 py-12 md:py-20">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <!-- Left Content -->
+    <!-- Departments Section -->
+    <section class="py-12 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Heading and Button Row -->
+            <div class="flex flex-col md:flex-row md:justify-between items-center mb-8 text-center md:text-left">
                 <div>
-                    <div class="flex items-center space-x-2">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-5">
-                        <p class="text-blue-500 font-semibold uppercase tracking-wide">Get an Appointment</p>
+                    <div class="flex items-center justify-center md:justify-start space-x-2">
+                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
+                            alt="Separator" class="h-4 md:h-5">
+                        <p class="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">Departments</p>
                     </div>
-                    
-                    <h2 class="text-3xl md:text-4xl font-bold mt-2 leading-snug">
-                        The Wide Network of Best Healthcare
-                    </h2>
-                    <p class="mt-4 text-lg text-blue-200">
-                        Our team of highly trained professionals uses the latest healing technologies to restore you to pain-free health quickly and easily.
-                    </p>
+                    <h2 class="text-2xl md:text-3xl font-bold mt-2">Explore Our Services</h2>
                 </div>
-        
-                <!-- Right Form -->
-                <div class="p-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="flex items-center bg-white  p-3 rounded-lg">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b0_form-user.svg" class="w-6 h-6 mr-2">
-                            <input type="text" placeholder="Name" class="bg-transparent text-black flex-1 outline-none">
-                        </div>
-                        <div class="flex items-center bg-gray-100 p-3 rounded-lg">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40ae_form-mail.svg" class="w-6 h-6 mr-2">
-                            <input type="email" placeholder="Email" class="bg-transparent text-black flex-1 outline-none">
-                        </div>
-                        <div class="flex items-center bg-gray-100 p-3 rounded-lg">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b1_form-phone.svg" class="w-6 h-6 mr-2">
-                            <input type="text" placeholder="Phone" class="bg-transparent text-black flex-1 outline-none">
-                        </div>
-                        <div class="flex items-center bg-gray-100 p-3 rounded-lg">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40ad_form-bookmark.svg" class="w-6 h-6 mr-2">
-                            <input type="text" placeholder="Subject" class="bg-transparent  text-black flex-1 outline-none">
+                <button class="bg-blue-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-blue-600 transition mt-4 md:mt-0 text-sm md:text-base">
+                    View All Services
+                </button>
+            </div>
+    
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <!-- Card 1 -->
+                <div class="p-4 md:p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
+                    <div class="flex justify-center">
+                        <div class="bg-blue-500 p-3 md:p-4 rounded-full shadow-md">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/heart-with-pulse.png" alt="Cardiologist" class="w-8 h-8 md:w-10 md:h-10">
                         </div>
                     </div>
-        
-                    <!-- Button & Contact -->
-                    <div class="mt-6 flex flex-col md:flex-row items-center md:space-x-4">
-                        <button class="bg-blue-500 text-white w-full md:w-auto px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition">
-                            Book Appointment
-                        </button>
-                        <div class="flex items-center space-x-2 mt-4 md:mt-0">
-                            <span>(OR)</span>
-                            <div class="w-12 ml-4 h-12 flex items-center justify-center border border-blue-500 rounded-lg">
-                                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4094_header-phone-call.svg" class="w-6 h-6">
-                            </div>
-                            <span class="text-lg font-semibold text-white">044 1239999</span>
+                    <h3 class="text-lg md:text-xl font-bold mt-3 md:mt-4">Cardiologist</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">Objectively integrate enterprise-wide strategic theme areas with functionalized infrastructures.</p>
+                    <a href="#" class="text-blue-500 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ Read More</a>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="p-4 md:p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
+                    <div class="flex justify-center">
+                        <div class="bg-blue-500 p-3 md:p-4 rounded-full shadow-md">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/lungs.png" alt="Pulmonary" class="w-8 h-8 md:w-10 md:h-10">
                         </div>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mt-3 md:mt-4">Pulmonary</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">Interactively productize premium technologies where interdependent quality vectors are available.</p>
+                    <a href="#" class="text-blue-500 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ Read More</a>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="p-4 md:p-6 rounded-lg text-center shadow-lg bg-gray-100 border-2 border-transparent hover:border-blue-500 hover:bg-white transition duration-300">
+                    <div class="flex justify-center">
+                        <div class="bg-blue-500 p-3 md:p-4 rounded-full shadow-md">
+                            <img src="https://img.icons8.com/ios-filled/50/ffffff/lungs.png" alt="Radiology" class="w-8 h-8 md:w-10 md:h-10">
+                        </div>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mt-3 md:mt-4">Radiology</h3>
+                    <p class="text-gray-600 mt-2 text-sm md:text-base">The point of using Lorem Ipsum is that it has a more-or-less distribution of look like readable English.</p>
+                    <a href="#" class="text-blue-500 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="bg-blue-900 text-white px-4 py-12 md:py-16">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <!-- Left Content -->
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-4 md:h-5">
+                    <p class="text-blue-300 font-semibold uppercase tracking-wide text-sm md:text-base">Get an Appointment</p>
+                </div>
+                
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2 leading-snug">
+                    The Wide Network of Best Healthcare
+                </h2>
+                <p class="mt-4 text-blue-200 text-sm md:text-base">
+                    Our team of highly trained professionals uses the latest healing technologies to restore you to pain-free health quickly and easily.
+                </p>
+            </div>
+    
+            <!-- Right Form -->
+            <div class="p-4 md:p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                    <div class="flex items-center bg-white p-2 md:p-3 rounded-lg">
+                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b0_form-user.svg" class="w-5 h-5 md:w-6 md:h-6 mr-2">
+                        <input type="text" placeholder="Name" class="bg-transparent text-black flex-1 outline-none text-sm md:text-base">
+                    </div>
+                    <div class="flex items-center bg-white p-2 md:p-3 rounded-lg">
+                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40ae_form-mail.svg" class="w-5 h-5 md:w-6 md:h-6 mr-2">
+                        <input type="email" placeholder="Email" class="bg-transparent text-white flex-1 outline-none text-sm md:text-base" style="color: white;">
+                    </div>
+                    <div class="flex items-center bg-white p-2 md:p-3 rounded-lg">
+                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b1_form-phone.svg" class="w-5 h-5 md:w-6 md:h-6 mr-2">
+                        <input type="text" placeholder="Phone" class="bg-transparent text-white flex-1 outline-none text-sm md:text-base" style="color: white;">
+                    </div>
+                    <div class="flex items-center bg-white p-2 md:p-3 rounded-lg">
+                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40ad_form-bookmark.svg" class="w-5 h-5 md:w-6 md:h-6 mr-2">
+                        <input type="text" placeholder="Subject" class="bg-transparent text-white flex-1 outline-none text-sm md:text-base" style="color: white;">
+                    </div>
+                </div>
+    
+                <!-- Button & Contact -->
+                <div class="mt-4 md:mt-6 flex flex-col md:flex-row items-center md:space-x-4">
+                    <button class="bg-blue-500 text-white w-full md:w-auto px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-600 transition text-sm md:text-base">
+                        Book Appointment
+                    </button>
+                    <div class="flex items-center space-x-2 mt-3 md:mt-0">
+                        <span class="text-sm md:text-base">(OR)</span>
+                        <div class="w-10 h-10 flex items-center justify-center border border-blue-500 rounded-lg">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4094_header-phone-call.svg" class="w-5 h-5">
+                        </div>
+                        <span class="text-sm md:text-base font-semibold text-white">044 1239999</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    <!--Benifits Section-->>
-
-        <div class="container mx-auto px-4  py-12  max-w-6xl ">
-            <!-- Title & Feature Buttons Section -->
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <!-- Left Side: Title & Description -->
-                <div>
-                    <div class="flex items-center space-x-2">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-5">
-                            <p class="text-blue-500 font-semibold uppercase tracking-wide">Benifits of consultation</p>
-                        </div>
-                    <h2 class="text-4xl font-bold mt-2">Consult The Best Doctor In The Department</h2>
-                    <p class="text-gray-600 mt-4">
-                        Doctors are choosing from our diverse pool of health specialists. Discover better health & wellness by using our doctor ratings & reviews to make your choice.
-                    </p>
+    <!-- Benefits Section -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Title & Feature Buttons Section -->
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Left Side: Title & Description -->
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" alt="Separator" class="h-4 md:h-5">
+                    <p class="text-blue-500 font-semibold uppercase tracking-wide text-sm md:text-base">Benefits of consultation</p>
                 </div>
-        
-                <!-- Right Side: Feature Buttons -->
-                <div class="space-y-4">
-                    <button class="w-full flex items-center justify-between px-6 py-4 border-2 border-blue-600 rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition">
-                        <span class="flex items-center"><span class="mr-3">🎧</span> Consult Top Doctors 24x7</span>
-                        <span class="bg-blue-600 text-white p-2 rounded-full">➡</span>
-                    </button>
-                    <button class="w-full flex items-center justify-between px-6 py-4 border-2 border-blue-600 rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition">
-                        <span class="flex items-center"><span class="mr-3">🛡️</span> Quality & Patient Safety</span>
-                        <span class="bg-blue-600 text-white p-2 rounded-full">➡</span>
-                    </button>
-                    <button class="w-full flex items-center justify-between px-6 py-4 border-2 border-blue-600 rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition">
-                        <span class="flex items-center"><span class="mr-3">⚕️</span> Perfect Health Essentials</span>
-                        <span class="bg-blue-600 text-white p-2 rounded-full">➡</span>
-                    </button>
-                </div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-2">Consult The Best Doctor In The Department</h2>
+                <p class="text-gray-600 mt-4 text-sm md:text-base">
+                    Doctors are choosing from our diverse pool of health specialists. Discover better health & wellness by using our doctor ratings & reviews to make your choice.
+                </p>
             </div>
-        
-             <!-- Video Cards Section -->
-                <div class="grid sm:grid-cols-2 gap-6 mt-12">
-                    <!-- Video Card 1 -->
-                    <div class="relative bg-white rounded-[20px] shadow-lg overflow-hidden w-[543.2px] h-[324px] max-w-full mx-auto">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4093_consult-video-background-two.png" 
-                            alt="Dentist" class="w-full h-full object-cover">
-                        <div class="absolute top-0 left-0 bg-blue-600 text-white p-4 w-[173px] h-[324px] rounded-[20px] flex flex-col justify-center">
-                            <p class="font-bold text-lg">SAY HELLO TO DENTIST</p>
-                            <p class="flex items-center mt-2"><span class="mr-2">▶</span> 5:36 mins</p>
-                        </div>
-                    </div>
-
-                    <!-- Video Card 2 -->
-                    <div class="relative bg-white rounded-[20px] shadow-lg overflow-hidden w-[543.2px] h-[324px] max-w-full mx-auto">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4092_consult-video-background.png" 
-                            alt="Surgeon" class="w-full h-full object-cover">
-                        <div class="absolute top-0 left-0 bg-blue-600 text-white p-4 w-[173.2px] h-[324px] rounded-[20px] flex flex-col justify-center">
-                            <p class="font-bold text-lg">SAY HELLO TO SURGEON</p>
-                            <p class="flex items-center mt-2"><span class="mr-2">▶</span> 7:12 mins</p>
-                        </div>
-                    </div>
-                </div>
-
-
+    
+            <!-- Right Side: Feature Buttons -->
+            <div class="space-y-3 md:space-y-4">
+                <button class="w-full flex items-center justify-between px-4 md:px-6 py-3 md:py-4 border-2 border-blue-600 rounded-xl md:rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition text-sm md:text-base">
+                    <span class="flex items-center"><span class="mr-2">🎧</span> Consult Top Doctors 24x7</span>
+                    <span class="bg-blue-600 text-white p-1 md:p-2 rounded-full text-xs md:text-sm">➡</span>
+                </button>
+                <button class="w-full flex items-center justify-between px-4 md:px-6 py-3 md:py-4 border-2 border-blue-600 rounded-xl md:rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition text-sm md:text-base">
+                    <span class="flex items-center"><span class="mr-2">🛡️</span> Quality & Patient Safety</span>
+                    <span class="bg-blue-600 text-white p-1 md:p-2 rounded-full text-xs md:text-sm">➡</span>
+                </button>
+                <button class="w-full flex items-center justify-between px-4 md:px-6 py-3 md:py-4 border-2 border-blue-600 rounded-xl md:rounded-2xl text-blue-600 font-semibold hover:bg-blue-600 hover:text-white transition text-sm md:text-base">
+                    <span class="flex items-center"><span class="mr-2">⚕️</span> Perfect Health Essentials</span>
+                    <span class="bg-blue-600 text-white p-1 md:p-2 rounded-full text-xs md:text-sm">➡</span>
+                </button>
+            </div>
         </div>
     
+        <!-- Video Cards Section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-8 md:mt-12">
+            <!-- Video Card 1 -->
+            <div class="relative bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden w-full h-[200px] md:h-[300px] mx-auto">
+                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4093_consult-video-background-two.png" 
+                    alt="Dentist" class="w-full h-full object-cover">
+                <div class="absolute top-0 left-0 bg-blue-600 text-white p-3 w-[120px] md:w-[150px] h-full rounded-l-xl md:rounded-l-2xl flex flex-col justify-center">
+                    <p class="font-bold text-xs md:text-sm">SAY HELLO TO DENTIST</p>
+                    <p class="flex items-center mt-1 text-xs md:text-sm"><span class="mr-1">▶</span> 5:36 mins</p>
+                </div>
+            </div>
 
-    <!--testimonials -->   
+            <!-- Video Card 2 -->
+            <div class="relative bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden w-full h-[200px] md:h-[300px] mx-auto">
+                <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f4092_consult-video-background.png" 
+                    alt="Surgeon" class="w-full h-full object-cover">
+                <div class="absolute top-0 left-0 bg-blue-600 text-white p-3 w-[120px] md:w-[150px] h-full rounded-l-xl md:rounded-l-2xl flex flex-col justify-center">
+                    <p class="font-bold text-xs md:text-sm">SAY HELLO TO SURGEON</p>
+                    <p class="flex items-center mt-1 text-xs md:text-sm"><span class="mr-1">▶</span> 7:12 mins</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <section class="max-w-7xl mx-auto py-12 px-4">
-            <h2 class="flex items-center justify-center text-2xl font-bold text-gray-900 mb-8">
+    <!-- Testimonials Section -->
+   
+    <section class="max-w-6xl mx-auto py-12 px-4">
+        <div class="text-center">
+            <h2 class="flex items-center justify-center text-xl md:text-2xl font-bold text-gray-900 mb-4">
                 <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
-                    alt="Separator" class="h-5 mr-2"> 
+                    alt="Separator" class="h-4 md:h-5 mr-2"> 
                 Testimonials
                 <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
-                alt="Separator" class="h-5 mr-2"> 
+                alt="Separator" class="h-4 md:h-5 mr-2"> 
             </h2>
-            <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">What Our Patients Say</h1>
-        
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">What Our Patients Say</h1>
+        </div>
+    
+        <div class="relative px-4 md:px-8">
+            <!-- Navigation Buttons (Desktop only) -->
+            <div class="hidden md:block">
+                <div class="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md hover:bg-blue-100 transition"></div>
+                <div class="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white p-3 rounded-full shadow-md hover:bg-blue-100 transition"></div>
+            </div>
+    
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <!-- Testimonial 1 -->
-                    <div class="swiper-slide bg-white p-6 rounded-2xl shadow-lg w-[300px] h-[300px]">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
-                        <p class="text-gray-700">“I wish the world could know the wonderful things happening at Doctorate hospital.”</p>
-                        <div class="flex space-x-1 mt-2 text-yellow-500">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <div class="flex items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-12 h-12 rounded-full">
-                            <div class="ml-3">
-                                <p class="font-bold text-gray-900">Mark Brown</p>
-                                <p class="text-sm text-gray-500">CUSTOMER SERVICE</p>
+                    <div class="swiper-slide px-2">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg h-full">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
+                            <p class="text-gray-700">"I wish the world could know the wonderful things happening at Doctorate hospital."</p>
+                            <div class="flex space-x-1 mt-2 text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-bold text-gray-900">Mark Brown</p>
+                                    <p class="text-sm text-gray-500">CUSTOMER SERVICE</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-        
+    
                     <!-- Testimonial 2 -->
-                    <div class="swiper-slide bg-white p-6 rounded-2xl shadow-lg w-[300px] h-[300px]">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
-                        <p class="text-gray-700">“Doctors always encouraged me to ask questions and made me feel comfortable.”</p>
-                        <div class="flex space-x-1 mt-2 text-yellow-500">
-                            ⭐⭐⭐⭐☆
-                        </div>
-                        <div class="flex items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-12 h-12 rounded-full">
-                            <div class="ml-3">
-                                <p class="font-bold text-gray-900">Robert Davis</p>
-                                <p class="text-sm text-gray-500">CANCER PATIENT</p>
+                    <div class="swiper-slide px-2">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg h-full">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
+                            <p class="text-gray-700">"Doctors always encouraged me to ask questions and made me feel comfortable."</p>
+                            <div class="flex space-x-1 mt-2 text-yellow-500">
+                                ⭐⭐⭐⭐☆
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-bold text-gray-900">Robert Davis</p>
+                                    <p class="text-sm text-gray-500">CANCER PATIENT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-        
+    
                     <!-- Testimonial 3 -->
-                    <div class="swiper-slide bg-white p-6 rounded-2xl shadow-lg w-[300px] h-[300px]">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
-                        <p class="text-gray-700">“All the doctors, nurses, and staff deserve praise for their attention & care.”</p>
-                        <div class="flex space-x-1 mt-2 text-yellow-500">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <div class="flex items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/3.jpg" class="w-12 h-12 rounded-full">
-                            <div class="ml-3">
-                                <p class="font-bold text-gray-900">Vanseena Adams</p>
-                                <p class="text-sm text-gray-500">DENTAL PATIENT</p>
+                    <div class="swiper-slide px-2">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg h-full">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
+                            <p class="text-gray-700">"All the doctors, nurses, and staff deserve praise for their attention & care."</p>
+                            <div class="flex space-x-1 mt-2 text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/women/3.jpg" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-bold text-gray-900">Vanseena Adams</p>
+                                    <p class="text-sm text-gray-500">DENTAL PATIENT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-        
+    
                     <!-- Testimonial 4 -->
-                    <div class="swiper-slide bg-white p-6 rounded-2xl shadow-lg w-[300px] h-[300px]">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
-                        <p class="text-gray-700">“The hospital staff was very professional, and they treated me with great care.”</p>
-                        <div class="flex space-x-1 mt-2 text-yellow-500">
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                        <div class="flex items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/men/4.jpg" class="w-12 h-12 rounded-full">
-                            <div class="ml-3">
-                                <p class="font-bold text-gray-900">David Johnson</p>
-                                <p class="text-sm text-gray-500">SURGERY PATIENT</p>
+                    <div class="swiper-slide px-2">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg h-full">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
+                            <p class="text-gray-700">"The hospital staff was very professional, and they treated me with great care."</p>
+                            <div class="flex space-x-1 mt-2 text-yellow-500">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/men/4.jpg" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-bold text-gray-900">David Johnson</p>
+                                    <p class="text-sm text-gray-500">SURGERY PATIENT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-        
+    
                     <!-- Testimonial 5 -->
-                    <div class="swiper-slide bg-white p-6 rounded-2xl shadow-lg w-[300px] h-[300px]">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
-                        <p class="text-gray-700">“The entire experience was smooth, and the doctors were very supportive.”</p>
-                        <div class="flex space-x-1 mt-2 text-yellow-500">
-                            ⭐⭐⭐⭐☆
-                        </div>
-                        <div class="flex items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/5.jpg" class="w-12 h-12 rounded-full">
-                            <div class="ml-3">
-                                <p class="font-bold text-gray-900">Sophia Green</p>
-                                <p class="text-sm text-gray-500">ORTHOPEDIC PATIENT</p>
+                    <div class="swiper-slide px-2">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg h-full">
+                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40b7_testimonial-quote.svg" class="w-8 h-8 mb-4">
+                            <p class="text-gray-700">"The entire experience was smooth, and the doctors were very supportive."</p>
+                            <div class="flex space-x-1 mt-2 text-yellow-500">
+                                ⭐⭐⭐⭐☆
+                            </div>
+                            <div class="flex items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/women/5.jpg" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-bold text-gray-900">Sophia Green</p>
+                                    <p class="text-sm text-gray-500">ORTHOPEDIC PATIENT</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
-                <!-- Navigation Buttons with padding -->
-                <div class="swiper-button-prev hidden sm:block -ml-10"></div>
-                <div class="swiper-button-next hidden sm:block -mr-10"></div>
-        
-                <!-- Pagination Dots Centered -->
-                <div class="swiper-pagination sm:flex sm:justify-center mt-4"></div>
+    
+                <!-- Pagination Dots (Mobile only) -->
+                <div class="swiper-pagination md:hidden flex justify-center mt-6"></div>
             </div>
-        </section>
- 
-    <!--records-->>
+        </div>
+    </section>
 
-        <section class="bg-blue-900 text-white py-12">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <!-- Stat 1 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Patients Icon" class="w-12 h-12">
-                        </div>
-                        <h3 class="text-2xl font-bold mt-4">1.5 Crore+</h3>
-                        <p class="text-gray-300">Satisfied Patients</p>
-                    </div>
-        
-                    <!-- Stat 2 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1150/1150645.png" alt="Appointments Icon" class="w-12 h-12">
-                        </div>
-                        <h3 class="text-2xl font-bold mt-4">2 Million+</h3>
-                        <p class="text-gray-300">Doctor Appointments</p>
-                    </div>
-        
-                    <!-- Stat 3 -->
-                    <div class="flex flex-col items-center">
-                        <div class="bg-blue-500 p-4 rounded-full">
-                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Experts Icon" class="w-12 h-12">
-                        </div>
-                        <h3 class="text-2xl font-bold mt-4">200,000+</h3>
-                        <p class="text-gray-300">Certified Experts</p>
-                    </div>
+    <!-- Records Section -->
+    <section class="bg-blue-900 text-white py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center">
+            <!-- Stat 1 -->
+            <div class="flex flex-col items-center">
+                <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Patients Icon" class="w-8 h-8 md:w-10 md:h-10">
                 </div>
+                <h3 class="text-xl md:text-2xl font-bold mt-3 md:mt-4">1.5 Crore+</h3>
+                <p class="text-gray-300 text-sm md:text-base">Satisfied Patients</p>
             </div>
-        </section>
+    
+            <!-- Stat 2 -->
+            <div class="flex flex-col items-center">
+                <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1150/1150645.png" alt="Appointments Icon" class="w-8 h-8 md:w-10 md:h-10">
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mt-3 md:mt-4">2 Million+</h3>
+                <p class="text-gray-300 text-sm md:text-base">Doctor Appointments</p>
+            </div>
+    
+            <!-- Stat 3 -->
+            <div class="flex flex-col items-center">
+                <div class="bg-blue-500 p-3 md:p-4 rounded-full">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Experts Icon" class="w-8 h-8 md:w-10 md:h-10">
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold mt-3 md:mt-4">200,000+</h3>
+                <p class="text-gray-300 text-sm md:text-base">Certified Experts</p>
+            </div>
+        </div>
+    </section>
 
-
-    <!--Blogs-->
-
-        <section class="py-10">
-            <div class="max-w-6xl mx-auto mt-6 px-4">
-                <h2 class="flex items-center justify-center text-2xl font-bold text-gray-900 mb-8">
+    <!-- Blogs Section -->
+    <section class="py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <h2 class="flex items-center justify-center text-xl md:text-2xl font-bold text-gray-900 mb-4">
                     <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
-                        alt="Separator" class="h-5 mr-2"> 
+                        alt="Separator" class="h-4 md:h-5 mr-2"> 
                     OUR BLOG
                     <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40a1_subtitle-separator.svg" 
-                    alt="Separator" class="h-5 mr-2"> 
+                    alt="Separator" class="h-4 md:h-5 mr-2"> 
                 </h2>
-                <h3 class="text-center text-4xl font-bold text-gray-900">Latest Articles</h3>
-                
-
-                <div class="grid md:grid-cols-3 gap-6 mt-8">
-                    <!-- Article Card 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f3fe8_blog-thumbnail-image-1.jpg" alt="Doctor" class="w-full">
-                        <div class="p-6">
-                            <span class="text-blue-600 font-semibold text-sm bg-blue-100 px-3 py-1 rounded-full">CARDIOLOGY</span>
-                            <h3 class="text-xl font-semibold mt-3">Potential treatment for an Inflammatory blood disease</h3>
-                            <div class="flex items-center text-gray-500 text-sm mt-3">
-                                <span class="mr-2">👤 Dane Christian</span>
-                                <span>📅 May 14, 2022</span>
-                            </div>
-                            <a href="#" class="text-blue-600 font-semibold mt-4 inline-block">+ READMORE</a>
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Latest Articles</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8">
+                <!-- Article Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f3fe8_blog-thumbnail-image-1.jpg" alt="Doctor" class="w-full h-48 md:h-56 object-cover">
+                    <div class="p-4 md:p-6">
+                        <span class="text-blue-600 font-semibold text-xs md:text-sm bg-blue-100 px-2 py-1 rounded-full">CARDIOLOGY</span>
+                        <h3 class="text-lg md:text-xl font-semibold mt-2 md:mt-3">Potential treatment for an Inflammatory blood disease</h3>
+                        <div class="flex items-center text-gray-500 text-xs md:text-sm mt-2 md:mt-3">
+                            <span class="mr-2">👤 Dane Christian</span>
+                            <span>📅 May 14, 2022</span>
                         </div>
-                    </div>
-
-                    <!-- Article Card 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f409b_blog-thumbnail-image-9.jpg" alt="Hospital" class="w-full">
-                        <div class="p-6">
-                            <span class="text-blue-600 font-semibold text-sm bg-blue-100 px-3 py-1 rounded-full">NUTRITION</span>
-                            <h3 class="text-xl font-semibold mt-3">Bone health exercise: A guide to maintaining healthy bones</h3>
-                            <div class="flex items-center text-gray-500 text-sm mt-3">
-                                <span class="mr-2">👤 Jack Sparrow</span>
-                                <span>📅 April 12, 2021</span>
-                            </div>
-                            <a href="#" class="text-blue-600 font-semibold mt-4 inline-block">+ READMORE</a>
-                        </div>
-                    </div>
-
-                    <!-- Article Card 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f4009_blog-thumbnail-image-3.jpg" alt="Optometry" class="w-full">
-                        <div class="p-6">
-                            <span class="text-blue-600 font-semibold text-sm bg-blue-100 px-3 py-1 rounded-full">DENTIST</span>
-                            <h3 class="text-xl font-semibold mt-3">Helping your child cope with separation anxiety</h3>
-                            <div class="flex items-center text-gray-500 text-sm mt-3">
-                                <span class="mr-2">👤 Martin Devan</span>
-                                <span>📅 April 24, 2022</span>
-                            </div>
-                            <a href="#" class="text-blue-600 font-semibold mt-4 inline-block">+ READMORE</a>
-                        </div>
+                        <a href="#" class="text-blue-600 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ READMORE</a>
                     </div>
                 </div>
-                <div class="flex justify-center mt-8">
-                    <button class="px-8 py-4 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition">
-                        MORE ARTICLES
-                    </button>
+
+                <!-- Article Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f409b_blog-thumbnail-image-9.jpg" alt="Hospital" class="w-full h-48 md:h-56 object-cover">
+                    <div class="p-4 md:p-6">
+                        <span class="text-blue-600 font-semibold text-xs md:text-sm bg-blue-100 px-2 py-1 rounded-full">NUTRITION</span>
+                        <h3 class="text-lg md:text-xl font-semibold mt-2 md:mt-3">Bone health exercise: A guide to maintaining healthy bones</h3>
+                        <div class="flex items-center text-gray-500 text-xs md:text-sm mt-2 md:mt-3">
+                            <span class="mr-2">👤 Jack Sparrow</span>
+                            <span>📅 April 12, 2021</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ READMORE</a>
+                    </div>
+                </div>
+
+                <!-- Article Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fe5/65bb1ade509e90321a2f4009_blog-thumbnail-image-3.jpg" alt="Optometry" class="w-full h-48 md:h-56 object-cover">
+                    <div class="p-4 md:p-6">
+                        <span class="text-blue-600 font-semibold text-xs md:text-sm bg-blue-100 px-2 py-1 rounded-full">DENTIST</span>
+                        <h3 class="text-lg md:text-xl font-semibold mt-2 md:mt-3">Helping your child cope with separation anxiety</h3>
+                        <div class="flex items-center text-gray-500 text-xs md:text-sm mt-2 md:mt-3">
+                            <span class="mr-2">👤 Martin Devan</span>
+                            <span>📅 April 24, 2022</span>
+                        </div>
+                        <a href="#" class="text-blue-600 font-semibold mt-3 md:mt-4 inline-block text-sm md:text-base">+ READMORE</a>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="flex justify-center mt-6 md:mt-8">
+                <button class="px-6 md:px-8 py-2 md:py-3 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition text-sm md:text-base">
+                    MORE ARTICLES
+                </button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer-->
-
-            <footer class="bg-[#0A2A5C] text-white py-10">
-                <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- Brand & Social Links -->
-                    <div>
-                        <a href="#" class="flex items-center space-x-2 text-white font-bold text-xl">
-                            <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40c1_footer-logo.png" alt="Doctorate Logo" class="h-8">
-                        
-                        </a>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="your-facebook-link" class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C]">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="your-twitter-link" class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C]">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="your-linkedin-link" class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C]">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="your-instagram-link" class="w-10 h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C]">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                        <p class="text-sm mt-4 opacity-70">© Drafted by BlogHunch</p>
-                    </div>
-            
-                    <!-- Explore Section -->
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">Explore</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="hover:text-gray-300">Style Guide</a></li>
-                            <li><a href="#" class="hover:text-gray-300">Changelog</a></li>
-                            <li><a href="#" class="hover:text-gray-300">Licenses</a></li>
-                            <li><a href="#" class="hover:text-gray-300">Protected Page</a></li>
-                            <li><a href="#" class="hover:text-gray-300">404 Page</a></li>
-                        </ul>
-                    </div>
-            
-                    <!-- Contact Section -->
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">Contact</h3>
-                        <p class="flex items-center space-x-2">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>24A Kingston Street, Los Vegas NC 28202, USA.</span>
-                        </p>
-                        <p class="flex items-center space-x-2 mt-2">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:support@doctorate.com" class="hover:text-gray-300">support@doctorate.com</a>
-                        </p>
-                        <p class="flex items-center space-x-2 mt-2">
-                            <i class="fas fa-phone"></i>
-                            <span>(+22) 123 - 4567 - 900</span>
-                        </p>
-                    </div>
-            
-                    <!-- Book an Appointment -->
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">Book an appointment</h3>
-                        <p class="text-sm opacity-80 mb-4">The Doctorate staff members are well-trained professionals.</p>
-                        <a href="tel:+0441239999" class="bg-white text-[#0A2A5C] px-6 py-3 rounded-lg font-bold flex items-center space-x-2 hover:bg-gray-200">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>CALL: +044 1239999</span>
-                        </a>
-                    </div>
+    <!-- Footer -->
+    <footer class="bg-[#0A2A5C] text-white py-8 md:py-10 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <!-- Brand & Social Links -->
+            <div>
+                <a href="#" class="flex items-center space-x-2 text-white font-bold text-xl">
+                    <img src="https://cdn.prod.website-files.com/65bb1ade509e90321a2f3fb7/65bb1ade509e90321a2f40c1_footer-logo.png" alt="Doctorate Logo" class="h-6 md:h-8">
+                </a>
+                <div class="flex space-x-3 md:space-x-4 mt-3 md:mt-4">
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C] text-sm">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C] text-sm">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C] text-sm">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center border border-white rounded-full hover:bg-white hover:text-[#0A2A5C] text-sm">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </div>
-            </footer>   
+                <p class="text-xs md:text-sm mt-3 md:mt-4 opacity-70">© Drafted by BlogHunch</p>
+            </div>
+    
+            <!-- Explore Section -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-2 md:mb-3">Explore</h3>
+                <ul class="space-y-1 md:space-y-2">
+                    <li><a href="#" class="hover:text-gray-300 text-sm md:text-base">Style Guide</a></li>
+                    <li><a href="#" class="hover:text-gray-300 text-sm md:text-base">Changelog</a></li>
+                    <li><a href="#" class="hover:text-gray-300 text-sm md:text-base">Licenses</a></li>
+                    <li><a href="#" class="hover:text-gray-300 text-sm md:text-base">Protected Page</a></li>
+                    <li><a href="#" class="hover:text-gray-300 text-sm md:text-base">404 Page</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-2 md:mb-3">Contact</h3>
+                <p class="flex items-start space-x-2 text-sm md:text-base">
+                    <i class="fas fa-map-marker-alt mt-1"></i>
+                    <span>24A Kingston Street, Los Vegas NC 28202, USA.</span>
+                </p>
+                <p class="flex items-center space-x-2 mt-2 text-sm md:text-base">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:support@doctorate.com" class="hover:text-gray-300">support@doctorate.com</a>
+                </p>
+                <p class="flex items-center space-x-2 mt-2 text-sm md:text-base">
+                    <i class="fas fa-phone"></i>
+                    <span>(+22) 123 - 4567 - 900</span>
+                </p>
+            </div>
+    
+            <!-- Book an Appointment -->
+            <div>
+                <h3 class="text-base md:text-lg font-semibold mb-2 md:mb-3">Book an appointment</h3>
+                <p class="text-xs md:text-sm opacity-80 mb-3 md:mb-4">The Doctorate staff members are well-trained professionals.</p>
+                <a href="tel:+0441239999" class="bg-white text-[#0A2A5C] px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold flex items-center space-x-2 hover:bg-gray-200 text-sm md:text-base">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>CALL: +044 1239999</span>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-  
-
-
-            <!--javascript-->
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   
     <script>
-       var swiper = new Swiper('.swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-    }
-  });
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                // When window width is >= 768px
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    centeredSlides: false,
+                    pagination: {
+                        el: null, // Remove pagination on desktop
+                    }
+                }
+            }
+        });
     </script>
-
-  
 </body>
 </html>
